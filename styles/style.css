@@ -1,0 +1,387 @@
+/* styling for the navigation bar elements, using flexbox */
+
+.navigation-bar {
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+/* styling for the left section of the navigation bar, which simply contains the name of the website */
+
+.left-section {
+    padding-left: 20px;
+    display: flex;
+    align-items: left;
+    align-items: center;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* styling for the right section of the navigation bar, which contains the buttons linking to different parts of the website */
+
+.right-section {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0; 
+}
+
+.navigation-button {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.navigation-button:hover {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*styling to ensure that when scrolling to different parts of the page using the buttons, that the navigation bar doesn't land on top of the section header*/
+
+#home, #projects, #about, #contact {
+    scroll-margin-top: 50px;
+}
+
+/*styling for whole page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Poppins, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*styling for the home section */
+
+.container-home {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.image-side {
+    width: 50%; /* Half of the screen */
+    overflow: hidden;
+}
+
+.image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers entire half */
+}
+
+.content-side {
+    width: 50%; /* Other half of the screen */
+    justify-content: center;
+    padding: 20px;
+    padding-top: 150px;
+    background-color: rgb(244, 244, 244); 
+    overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+.content-side h1 {
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.content-side h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.content-side p {
+    max-width: 80%;
+    font-size: 18px;
+}
+
+/* styling that applies to multiple sections */
+
+.container-about,
+.container-contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 30px;
+}
+
+/* Apply uniform padding for primary containers */
+.container-projects, .container-about, .container-contact, .feedback-form, .feedback-section, .contact-form {
+    padding: 20px;
+    margin: 10px auto; /* Center-align and add vertical spacing */
+}
+
+/* styling for the Project section */
+
+.container-projects {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-like {
+    display: flex;
+    border: none;
+    border-bottom: solid 2px rgb(225, 225, 225);
+    background-color: transparent;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.button-like:hover {
+    font-weight: bold;
+}
+
+.button-text {
+    flex: 1; /* Text takes available space */
+}
+
+.button-arrow {
+    font-size: 18px; /* Adjust arrow size as needed */
+    color: rgb(102, 102, 102); /* Arrow color */
+    margin-left: 10px; /* Space between text and arrow */
+}
+
+/* more styling for the projects section when items are expanded */
+
+.project-description {
+    display: none; /* Initially hidden */
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+}
+
+.project-description p {
+    margin: 0;
+}
+
+.button-like.active + .project-description {
+    display: block; /* Show description when active */
+}
+
+.button-like .button-arrow.down {
+    transform: rotate(90deg); /* Change arrow direction */
+    transition: transform 0.3s ease;
+}
+
+/* styling for the about section/weather app */
+
+.weather-app {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(240, 244, 248);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.weather-info h2 {
+    font-size: 24px;
+    color: rgb(51, 51, 51);
+}
+
+.location {
+    font-weight: bold;
+    font-size: 19px;
+    color: rgb(85, 85, 85);
+}
+
+.forecast {
+    margin-top: 15px;
+}
+
+.temperature {
+    font-size: 32px;
+    color: rgb(1, 120, 255);
+}
+
+.description {
+    font-style: italic;
+    color: rgb(102, 102, 102);
+}
+
+.details {
+    font-size: 16px;
+    color: rgb(136, 136, 136);
+}
+
+/* styling for elements that are included in the contact form AND feedback form */
+
+.weather-forecast-form, .weather-results, .feedback-form, .feedback-section, .contact-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.feedback-form h2, .feedback-section h2, .contact-form h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-me-button, .vote-buttons, button{
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    border: solid 2px rgb(225, 225, 225);
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 10px;
+}  
+
+.contact-me-button:hover, .vote-buttons:hover, button:hover {
+    font-weight: bold;
+} 
+
+/* to add continuity to all the input fields' borders: */
+#city-name, #days, #contact-name, #mail, #msg, #name, #description {
+    border: solid 2px rgb(225, 225, 225);
+}
+
+/* styling for just the Contact form */
+
+form {
+    display: block;
+    padding: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: solid 2px rgb(225, 225, 225);
+    border-radius: 4px;
+}
+
+textarea {
+    vertical-align: top;
+    height: 80px;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(249, 249, 249);
+}
+
+/* Styling for just the feedback form */  
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 4px;
+}
+    
+#feedbackList {
+    list-style-type: none;
+    padding: 0;
+}
+    
+.feedback-item {
+    padding: 10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+    
+#voteCount {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* styling to make the page responsive, stacking the sections vertically on smaller screens */
+
+@media (max-width: 768px) {
+    .container-home {
+        flex-direction: column;
+        height: auto; /* allows it to expand as needed when stacking */
+    }
+    .image-side, .content-side {
+        width: 100%;
+        height: auto;
+    }
+    .content-side {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-bar {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* Adjust padding and margin on smaller screens */
+@media (max-width: 768px) {
+    .container-projects, .container-about, .container-contact, .feedback-form, .feedback-section, .contact-form {
+        padding: 10px;
+        margin: 5px auto;
+    }
+}

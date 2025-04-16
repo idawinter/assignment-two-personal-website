@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ida Winter</title>
+
+    <!-- fonts downloaded from Google -->
+  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <!-- JavaSDcript for projects sectionm -->
+
+    <script src="/javascript/project-section.js"></script>
+
+    <!-- JavaScript for weather app -->
+    <script src="/javascript/weather.js"></script>
+
+    <!-- JavaScript for contact form and feedback form -->
+     <script src="/javascript/contact-feedback-forms.js"></script>
+
+</head>
+
+<body>
+<!-- Navigation Bar that stays put as you scroll up and down the page -->
+
+    <nav class="navigation-bar">
+
+        <!-- left side of the navigation bar with name that doesn't wrap -->
+
+        <div class="left-section">
+            <p class="name">Ida Winter</p>
+        </div>
+
+        <!-- right side of the navigation bar with links that turn bold when mouse hovers, and move apart/together when screen size changes -->
+
+        <div class="right-section">
+            <button class="navigation-button" onclick="location.href='#home'">Home</button>
+            <button class="navigation-button" onclick="location.href='#projects'">Projects</button>
+            <button class="navigation-button" onclick="location.href='#about'">About</button>
+            <button class="navigation-button" onclick="location.href='#contact'">Contact</button>
+            <div class="upload-icon-container"></div>
+        </div>
+            
+    </nav>
+
+<!-- Home Page with head shot on left and blurb on right -->
+
+<section class="container-home" id="home">
+    <div class="image-side">
+        <img src="/images/ida-winter-headshot-resized.jpeg" alt="Ida Winter's headshot">
+    </div>
+
+    <div class="content-side">
+        <h1>Ida Winter</h1>
+        <h2>Software Developer</h2>
+        <p>I'm currently a student of a 36-week intensive computer programming bootcamp, where I am gaining hands-on experience in building real-world applications using modern technologies. I'm passionate about turning complex problems into efficient code and am eager to bring my newly acquired skills to a development team.
+            <br>
+            <br>
+        <p>Take a look at my portfolio below to see what I’ve been working on during my bootcamp journey. I’m currently seeking my first role as a developer to further grow my skills and contribute to innovative projects.</p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+
+<section class="container-projects" id="projects">
+    <h2>My Projects</h2>
+    <div class="flex-container">
+        <div class="button-like" role="button" tabindex="0">
+            <span class="button-text">Project 1</span>
+            <span class="button-arrow">&#10597</span>
+        </div>
+        <div class="project-description">
+            <h2>CodeCollab</h2>
+            <p>A collaborative coding platform where users can create and share coding projects in real time. Developed with React and Express.js, the platform integrates GitHub for project management and collaboration. A sleek UI built with CSS ensures an engaging user experience. The app also demonstrates seamless API integration tested with Postman.</p>
+        </div>
+            
+        <div class="button-like" role="button" tabindex="0">
+            <span class="button-text">Project 2</span>
+            <span class="button-arrow">&#10597</span>
+        </div>
+        <div class="project-description">
+            <h2>Task Manager Plus</h2>
+            <p>A responsive web app that helps users organize tasks and track deadlines. Built with React, Node.js, and MongoDB, it features a clean user interface and allows task prioritization, status updates, and reminders. Postman was used for API testing during development, and the project was containerized with Docker for streamlined deployment.</p>
+        </div>
+            
+        <div class="button-like" role="button" tabindex="0">
+            <span class="button-text">Project 3</span>
+            <span class="button-arrow">&#10597</span>
+        </div>
+        <div class="project-description">
+            <h2>QuickRecipe Finder</h2>
+            <p>A recipe search app where users input ingredients to discover meal ideas. Built with Flask for backend logic and React for the frontend, it leverages MongoDB to store user preferences and favorite recipes. The app is Dockerized for deployment and uses GitHub for version control, showcasing practical full-stack development skills.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section that includes a weather forecast -->
+
+<section class="container-about" id="about">
+    <div class="weather-forecast-form">
+        <h2>About Me</h2>
+        <br>
+        <p>I love to travel! My latest trip was to Norway - what a beautiful country! I visited the birthplace of my grandfather, which was within the Arctic Circle. It was perfect in the summer, but I've been keeping an eye on the weather there in the winter and it might be a little too cold for me to visit in the winter.</p>
+        <br>
+        <p>Where do you want to travel to? Check the forecast here:</p>
+        <form id="weatherForecastForm">
+            <label for="city-name">City:</label>
+            <input type="text" id="city-name" name="city_name" required />
+            <label for="days">Number of Days (1-5):</label>
+            <input type="number" id="days" name="days" min="1" max="5" required />
+            <button class="contact-me-button" type="submit">Get Forecast</button>
+            <button class="contact-me-button" type="button" id="resetButton">Reset</button>
+        </form>
+        <p>* Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeather</a>.</p>
+    </div>
+
+    <div id="weather-results" class="weather-results">
+        <h2>Weather Results</h2>
+    </div>
+</section>
+
+<!-- Contact Section that includes both a contact form and a Feedback Form -->
+
+<section class="container-contact" id="contact">
+    
+    <!-- Contact Form -->
+
+    <div class="contact-form">
+        <h2>Contact Form</h2>
+        <br>
+        <p>Have a question or want to work together?  Fill out the form below and I'll get back to you as soon as possible.</p>
+        <form id="contactMeForm">
+            <label for="contact-name">Name:</label>
+            <input type="text" id="contact-name" name="user_name" />
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message" rows="4"></textarea>
+
+            <p>
+                <button type="submit">Send Message</button>
+                <button type="reset">Reset Form</button>
+              </p>
+        </form>
+    </div>
+
+    <!-- Feedback Form -->
+
+    <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        <br>
+        <p>Let me know what you think of my website.</p>
+        <form id="feedbackForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+    
+          <label for="description">Feedback:</label>
+          <textarea id="description" rows="4" required></textarea>
+          <p>
+            <button type="submit">Submit Feedback</button>
+            <button type="reset">Reset Form</button>
+          </p>
+
+    
+          <p><button class="vote-buttons" type="button" id="likeButton">👍 Like</button>
+          <button class="vote-buttons" type="button" id="dislikeButton">👎 Dislike</button></p>
+        </form>
+
+        <h2>Voting Results</h2>
+        <ul id="feedbackList"></ul>
+        <div id="likeCount">Total Likes: 0</div>
+        <div id="dislikeCount">Total Dislikes: 0</div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; Ida Winter 2024. All rights reserved.</p>
+</footer>
+    
+</body>
+</html>
